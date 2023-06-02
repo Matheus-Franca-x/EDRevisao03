@@ -24,7 +24,17 @@ public class Main
 			l[i] = new ListaString();
 		
 		for (String each : numVet)
-			l[hashCode(each)].addFirst(each);
+		{
+			try {
+				if (l[hashCode(each)].isEmpty())
+					l[hashCode(each)].addFirst(each);
+				else
+					l[hashCode(each)].addLast(each);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public static int hashCode(String num)
